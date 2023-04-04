@@ -16,9 +16,8 @@
       }
 
       /* PROBLEM 1
-      The whole page seems condensed, let's start by setting a 2em margin to the whole page.
+      The whole page seems condensed, let's start by setting a 2em margin to the body tag.
       */
-      /* ANSWER: We don't want to set mergins for other elements at this point. So let's use the body */
       body {
         margin: 2em;
       }
@@ -26,7 +25,6 @@
       /* PROBLEM 2
       The section-title class should have inverse coloring (white on black), 0.5em padding, 3px grey solid border, and 0.5em margin only to the top.
       */
-      /* ANSWER:  It's just a matter of setting up the properties of the box model */
       .section-title {
         margin-top: 0.5em;
         border: 3px solid grey;
@@ -36,9 +34,8 @@
       }
 
       /* PROBLEM 3
-      The paragraphs sections are packed between the titles. Add 1em padding and set the background color to lightgrey.
+      The divs with the sections class are packed between the titles. Add 1em padding and set the background color to lightgrey.
       */
-      /* ANSWER:  Use the section class since it's wrapping each text section is the HTML code */
       .section {
         background-color: lightgray;
         padding: 1em;
@@ -46,17 +43,16 @@
 
       /* PROBLEM 4
       It's looking much better. But the paragraphs inside the last section are still too close to each other. Choose the right selector(s) and add 1em padding to the bottom */
-      /* ANSWER:  Using div might mess with other elements. Let's target only what we need */
-      .section div {
-        padding-bottom: 1em;
+      .section div { //Using div might mess with other elements. Let's target only what we need
+        padding-bottom: 1em; 
       }
 
       /* PROBLEM 5 (DEBUGGING)
       When we start messing with margins and paddings, often we run into the "double spacing" issue, like what's happening in the end of each section. Why is this happening? How could you fix it by adding a new declaration below? */
       .section {
-        padding-bottom: 0;
+        padding-bottom: 0; //By removing the bottom padding of the section class, the total padding is back to 1em instead of 2em. You could have avoided this override by setting only top, left and right in the first declaration (PROBLEM 3)
       }
-      /* ANSWER: By removing the bottom padding of the section class, the total padding is back to 1em instead of 2em. You could have avoided this override by setting only top, left and right in the first declaration (PROBLEM 3) */
+
     </style>
   </head>
   <body>
